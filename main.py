@@ -14,7 +14,7 @@ if __name__ == "__main__":
 #print(df)  
 
 # print(df.values) 
-df["name"] = df["name"].str.replace(" ", "") 
+df["name"] = df["name"].str.replace(r"\s+", " ", regex=True) 
 df["name"] = df["name"].str.strip() 
 df["name"] = df["name"].str.title()   
 
