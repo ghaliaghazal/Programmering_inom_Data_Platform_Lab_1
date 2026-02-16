@@ -20,6 +20,10 @@ df["name"] = df["name"].str.title()
 
 df["price"] = df["price"].str.replace(r"\s+", " ", regex=True)
 
+df["price"] = pd.to_numeric(df["price"], errors="coerce")
+df["price"] = df["price"].mask(df["price"] <= 0, np.nan)
+
+
 
 
 
