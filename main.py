@@ -35,10 +35,24 @@ df["price_missing"] = df["price"].isna()
 df["currency_missing"] = df["currency"].isna()
 df["created_at_missing"] = df["created_at"].isna()
 
-#flag extremely high prices
-df["price_extreme"] = df["price"] > 15000
+
+df["price_extreme"] = df["price"] > 15000 #flag extremely high prices
 
 print(df)
+
+
+average_price = df["price"].mean()
+median_price = df["price"].median()
+number_of_products = len(df)
+number_of_products_with_price = df["price"].notna().sum()
+
+print(f"Average price: {average_price}")
+print(f"Median price: {median_price}")
+print(f"Number of products: {number_of_products}")
+print(f"Number of products with price: {number_of_products_with_price}")
+
+
+
 
 
 # print(df.info())
