@@ -1,12 +1,29 @@
-def main():
+"""def main():
     print("Hello from programmering-inom-data-platform-lab-1!")
-
-
-if __name__ == "__main__":
-    main()
-
+"""
 
 import pandas as pd 
+import numpy as np 
 
-df = pd.read_csv("lap 1 - csv.csv")
-print(df.head())
+if __name__ == "__main__":
+    df = pd.read_csv("lab 1 - csv.csv", sep=';') 
+    print(df.head()) 
+
+
+#df["id"].str.split(",")
+#print(df)  
+
+# print(df.values) 
+df["name"] = df["name"].str.replace(" ", "") 
+df["name"] = df["name"].str.strip() 
+df["name"] = df["name"].str.title()   
+
+
+
+
+
+
+
+
+print(df["name"])  
+
