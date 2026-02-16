@@ -28,9 +28,6 @@ df["currency"] = df["currency"].str.upper()
 
 
 
-
-
-
 # Flag missing values, and replace them with NaN
 df["id_missing"] = df["id"].isna()
 df["name_missing"] = df["name"].isna()
@@ -38,8 +35,11 @@ df["price_missing"] = df["price"].isna()
 df["currency_missing"] = df["currency"].isna()
 df["created_at_missing"] = df["created_at"].isna()
 
+#flag extremely high prices
+df["price_extreme"] = df["price"] > 15000
+
 print(df)
 
 
-print(df.info())
-print(df.currency) 
+# print(df.info())
+# print(df.currency) 
