@@ -18,12 +18,20 @@ df["name"] = df["name"].str.replace(r"\s+", " ", regex=True)
 df["name"] = df["name"].str.strip() 
 df["name"] = df["name"].str.title()   
 
+df["price"] = df["price"].str.replace(r"\s+", " ", regex=True)
 
 
 
 
 
 
+# Flag missing values, and replace them with NaN
+df["id_missing"] = df["id"].isna()
+df["name_missing"] = df["name"].isna()
+df["price_missing"] = df["price"].isna()
+df["currency_missing"] = df["currency"].isna()
+df["created_at_missing"] = df["created_at"].isna()
 
-print(df["name"])  
+print(df)
+
 
