@@ -1,2 +1,2 @@
-average_price,median_price,number_of_products,number_of_products_with_price
-22965.468085106382,600.0,55,47
+average_price,median_price,number_of_products,number_of_products_missing_price
+22965.468085106382,600.0,55,8
