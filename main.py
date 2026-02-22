@@ -48,7 +48,8 @@ analytics_summary = pd.DataFrame({
     "number_of_products": [len(df)],
     "number_of_products_with_price": [df["price"].notna().sum()]
 })
-    
+analytics_summary.to_csv("analytics_summary.csv", index=False)
+
 print(analytics_summary)
 
 
