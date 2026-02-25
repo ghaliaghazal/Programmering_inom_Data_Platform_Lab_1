@@ -48,14 +48,14 @@ if __name__ == "__main__":
 
     clean_df = df[~reject_mask].copy()
 
-
     analytics_summary = pd.DataFrame({
-        
-        "average_price": [df["price"].mean()],
-        "median_price": [df["price"].median()],
-        "number_of_products": [len(df)],
+        "average_price": [clean_df["price"].mean()],
+        "median_price": [clean_df["price"].median()],
+        "number_of_products": [len(clean_df)],
         "number_of_products_missing_price": [df["price"].isna().sum()]
-        })
+    })
+    
+    
     analytics_summary.to_csv("analytics_summary.csv", index=False)
     print(analytics_summary)
     
