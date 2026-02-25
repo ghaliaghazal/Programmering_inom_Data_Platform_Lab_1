@@ -4,7 +4,8 @@ import pandas as pd
 import numpy as np 
 
 if __name__ == "__main__":
-    df = pd.read_csv("lab 1 - csv.csv", sep=';') 
+    df = pd.read_csv("lab 1 - csv.csv", sep=';')
+    df["created_at"] = pd.to_datetime(df["created_at"], errors="coerce")
     
     
     df["name"] = df["name"].str.replace(r"\s+", " ", regex=True) 
