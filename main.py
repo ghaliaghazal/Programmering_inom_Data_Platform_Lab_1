@@ -37,6 +37,15 @@ if __name__ == "__main__":
     df["price_extreme"] = df["price"] > 15000 #flag extremely high prices
     print(df)
 
+    reject_mask = (
+        df["id_missing"] |
+        df["name_missing"] |
+        df["price_missing"] |
+        df["currency_missing"] |
+        df["created_at_missing"] |
+        df["price_extreme"]
+    )
+
 
     analytics_summary = pd.DataFrame({
         
