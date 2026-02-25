@@ -46,6 +46,8 @@ if __name__ == "__main__":
         df["price_extreme"]
     )
 
+    clean_df = df[~reject_mask].copy()
+
 
     analytics_summary = pd.DataFrame({
         
